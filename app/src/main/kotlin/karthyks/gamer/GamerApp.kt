@@ -1,8 +1,8 @@
-package com.github.karthyks.gamer
+package karthyks.gamer
 
 import android.app.Application
 
-class GamerApp: Application {
+class GamerApp: Application() {
 
 
     override fun onCreate() {
