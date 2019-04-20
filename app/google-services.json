@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "592957490110",
+    "firebase_url": "https://gamer-1b0d8.firebaseio.com",
+    "project_id": "gamer-1b0d8",
+    "storage_bucket": "gamer-1b0d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592957490110:android:420d98169dd74a75",
+        "android_client_info": {
+          "package_name": "com.github.karthyks.gamer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592957490110-4r8u8hk4lnrov3ve27rt34iaja5momv9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.karthyks.gamer",
+            "certificate_hash": "0c11d52f5045b99030fb1f1f7c5fc03b4855f5c3"
+          }
+        },
+        {
+          "client_id": "592957490110-bj6j6dgc5fri7t7jrpil187eunktufha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbFYeI2tMtHmGnMZTVRte2X8hYEWSaEGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592957490110-bj6j6dgc5fri7t7jrpil187eunktufha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
