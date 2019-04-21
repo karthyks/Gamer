@@ -37,7 +37,9 @@ class LoginActivity : BaseActivity() {
 
         NetworkStatus(this) { isAvailable ->
             if (isAvailable) {
-                snackBar.dismiss()
+                callAfter(1000) {
+                    snackBar.dismiss()
+                }
             } else {
                 snackBar.show()
             }
@@ -45,11 +47,8 @@ class LoginActivity : BaseActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        uiScope.launch(Dispatchers.Default) {
-            delay(2000)
-            launch(Dispatchers.Main) {
-                verifyLogin()
-            }
+        callAfter(2000) {
+            verifyLogin()
         }
 
         fab_facebook.setOnClickListener {
