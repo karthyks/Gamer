@@ -6,7 +6,6 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Build
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -51,7 +50,6 @@ class NetworkStatus private constructor(
     private val networkReceiver = object : BroadcastReceiver() {
 
         override fun onReceive(context: Context?, intent: Intent?) {
-            Log.d("NetworkChanged", "Something changed")
             val connectionManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE)
             (connectionManager as? ConnectivityManager)?.run {
                 val isConnected: Boolean =
