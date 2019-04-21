@@ -22,6 +22,9 @@ android {
     }
 
     buildTypes {
+        debug {
+
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -34,8 +37,8 @@ dependencies {
     compileOnly fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     compileOnly 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.0'
-    compileOnly 'androidx.appcompat:appcompat:1.0.2'
+    compileOnly 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    androidTestCompileOnly 'androidx.test:runner:1.2.0-alpha04'
+    androidTestCompileOnly 'androidx.test.espresso:espresso-core:3.2.0-alpha04'
     testCompileOnly 'junit:junit:4.12'
-    androidTestCompileOnly 'androidx.test:runner:1.1.1'
-    androidTestCompileOnly 'androidx.test.espresso:espresso-core:3.1.1'
 }

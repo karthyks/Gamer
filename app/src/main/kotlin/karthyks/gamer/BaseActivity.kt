@@ -3,7 +3,7 @@ package karthyks.gamer
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.*
 
-abstract class BaseActivity: AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
     private val job: Job = Job()
     val uiScope: CoroutineScope = CoroutineScope(job + Dispatchers.Main)
 
@@ -13,7 +13,7 @@ abstract class BaseActivity: AppCompatActivity() {
     }
 
 
-    inline  fun callAfter(millis: Long, crossinline callback: () -> Unit) {
+    inline fun callAfter(millis: Long, crossinline callback: () -> Unit) {
         uiScope.launch(Dispatchers.Default) {
             delay(millis)
             launch(Dispatchers.Main) {

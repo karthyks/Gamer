@@ -27,15 +27,15 @@ class LoginActivity : BaseActivity() {
     var loginProvider: LoginProvider? = null
 
     private lateinit var auth: FirebaseAuth
-
     private lateinit var snackBar: Snackbar
+
+    private lateinit var networkStatus: NetworkStatus
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         snackBar = Snackbar.make(parentLayout, "Network Unavailable!", Snackbar.LENGTH_INDEFINITE)
-
-        NetworkStatus(this) { isAvailable ->
+        networkStatus = NetworkStatus(this) { isAvailable ->
             if (isAvailable) {
                 callAfter(1000) {
                     snackBar.dismiss()
