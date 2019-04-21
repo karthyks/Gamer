@@ -15,6 +15,8 @@ import karthyks.gamer.login.facebook.redirectActivityResultToFacebookLogin
 import karthyks.gamer.login.view.hideAllFabs
 import karthyks.gamer.login.view.launchAllFabs
 import karthyks.gamer.login.view.showFacebookButton
+import com.github.karthyks.networkstatus.NetworkStatus
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -26,9 +28,20 @@ class LoginActivity : BaseActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+    private lateinit var snackBar: Snackbar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        snackBar = Snackbar.make(parentLayout, "Network Unavailable!", Snackbar.LENGTH_INDEFINITE)
+
+        NetworkStatus(this) { isAvailable ->
+            if (isAvailable) {
+                snackBar.dismiss()
+            } else {
+                snackBar.show()
+            }
+        }
 
         auth = FirebaseAuth.getInstance()
 
